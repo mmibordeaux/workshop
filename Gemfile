@@ -9,7 +9,11 @@ gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'         # Bootstrap         
 gem 'uglifier'                                              # JS compressor                   https://github.com/lautis/uglifier
 gem 'jquery-rails'                                          # JQuery                          https://github.com/rails/jquery-rails
 
-group :development, :test do
+group :production do
+  gem 'rails_12factor'
+end
+
+group :development do
   gem 'annotate'                                            # Annotate                        https://github.com/ctran/annotate_models
   gem 'byebug'                                              # Debug                           https://github.com/deivid-rodriguez/byebug
   gem 'web-console'
