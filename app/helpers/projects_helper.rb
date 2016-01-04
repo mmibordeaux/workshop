@@ -1,15 +1,13 @@
 # == Schema Information
 #
-# Table name: users
+# Table name: projects
 #
 #  id         :integer          not null, primary key
-#  first_name :string
-#  last_name  :string
-#  mail       :string
+#  name       :string
+#  project    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  project_id :integer
 #
 
-module UsersHelper
+module ProjectsHelper
 end

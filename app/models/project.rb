@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: groups
+# Table name: projects
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -9,10 +9,10 @@
 #  updated_at :datetime         not null
 #
 
-require 'test_helper'
+class Project < ActiveRecord::Base
+  has_many :users
 
-class GroupTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def to_s
+    "#{name}"
+  end
 end

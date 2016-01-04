@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :groups
+  resources :projects
   resources :users
-  root 'groups#index'
+  root 'projects#index'
 end

@@ -8,11 +8,11 @@
 #  mail       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  group_id   :integer
+#  project_id :integer
 #
 
 class User < ActiveRecord::Base
-  belongs_to :group
+  belongs_to :project
 
   def to_s
     "#{first_name} #{last_name}"

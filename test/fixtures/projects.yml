@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: groups
+# Table name: projects
 #
 #  id         :integer          not null, primary key
 #  name       :string
@@ -9,10 +9,12 @@
 #  updated_at :datetime         not null
 #
 
-class Group < ActiveRecord::Base
-  has_many :users
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-  def to_s
-    "#{name}"
-  end
-end
+one:
+  name: MyString
+  project: MyText
+
+two:
+  name: MyString
+  project: MyText
