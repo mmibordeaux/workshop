@@ -1,14 +1,14 @@
 <%= simple_form_for(@user) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :mail %>
-    <%= f.association :project %>
+  <div class="form-inputs form-group">
+    <%= f.input :first_name, input_html: { class: "form-control" } %>
+    <%= f.input :last_name, input_html: { class: "form-control" } %>
+    <%= f.input :mail, input_html: { class: "form-control" } %>
+    <%= f.association :project, input_html: { class: "form-control" }  %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-default" %>
   </div>
 <% end %>
