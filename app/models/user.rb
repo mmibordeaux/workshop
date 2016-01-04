@@ -14,6 +14,10 @@
 class User < ActiveRecord::Base
   belongs_to :project
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :mail, presence: true
+
   def to_s
     "#{first_name} #{last_name}"
   end
