@@ -2,11 +2,11 @@
 #
 # Table name: projects
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  project    :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  name        :string
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 require 'test_helper'

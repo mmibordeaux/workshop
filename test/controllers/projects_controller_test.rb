@@ -2,11 +2,11 @@
 #
 # Table name: projects
 #
-#  id         :integer          not null, primary key
-#  name       :string
-#  project    :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :integer          not null, primary key
+#  name        :string
+#  description :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 require 'test_helper'
@@ -29,7 +29,7 @@ class ProjectsControllerTest < ActionController::TestCase
 
   test "should create project" do
     assert_difference('Project.count') do
-      post :create, project: { name: @project.name, project: @project.project }
+      post :create, project: { name: @project.name, description: @project.description }
     end
 
     assert_redirected_to project_path(assigns(:project))
@@ -46,7 +46,7 @@ class ProjectsControllerTest < ActionController::TestCase
   end
 
   test "should update project" do
-    patch :update, id: @project, project: { name: @project.name, project: @project.project }
+    patch :update, id: @project, project: { name: @project.name, description: @project.description }
     assert_redirected_to project_path(assigns(:project))
   end
 
