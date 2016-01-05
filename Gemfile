@@ -8,6 +8,7 @@ gem 'sass-rails'                                            # SASS              
 gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'         # Bootstrap                       https://github.com/twbs/bootstrap-sass
 gem 'uglifier'                                              # JS compressor                   https://github.com/lautis/uglifier
 gem 'jquery-rails'                                          # JQuery                          https://github.com/rails/jquery-rails
+gem 'devise'                                                # Authentication                  https://github.com/plataformatec/devise
 
 group :production do
   gem 'rails_12factor'
@@ -19,4 +20,3 @@ group :development do
   gem 'web-console'
   gem 'spring'
 end
-
