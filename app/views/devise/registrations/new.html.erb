@@ -11,10 +11,7 @@
 
         <div class="form-actions">
             <%= f.button :submit, "Sign up", class: "btn btn-default" %>
-            <%- if controller_name != 'sessions' %><%= link_to "Log in", new_session_path(resource_name), class: "btn btn-link" %><% end -%>
         </div>
         <% end %>
-
-        <%#= render "devise/shared/links" %>
     </div>
 </div>
