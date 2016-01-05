@@ -5,7 +5,6 @@
 #  id                     :integer          not null, primary key
 #  first_name             :string
 #  last_name              :string
-#  mail                   :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  project_id             :integer
@@ -23,6 +22,7 @@
 
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /users
   def index
@@ -76,6 +76,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :mail, :project_id)
+      params.require(:user).permit(:first_name, :last_name, :email, :project_id)
     end
 end

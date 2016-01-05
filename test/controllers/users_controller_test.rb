@@ -5,7 +5,6 @@
 #  id                     :integer          not null, primary key
 #  first_name             :string
 #  last_name              :string
-#  mail                   :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  project_id             :integer
@@ -41,7 +40,7 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should create user" do
     assert_difference('User.count') do
-      post :create, user: { first_name: @user.first_name, last_name: @user.last_name, mail: @user.mail }
+      post :create, user: { first_name: @user.first_name, last_name: @user.last_name, email: @user.email }
     end
 
     assert_redirected_to user_path(assigns(:user))
@@ -58,7 +57,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should update user" do
-    patch :update, id: @user, user: { first_name: @user.first_name, last_name: @user.last_name, mail: @user.mail }
+    patch :update, id: @user, user: { first_name: @user.first_name, last_name: @user.last_name, email: @user.email }
     assert_redirected_to user_path(assigns(:user))
   end
 

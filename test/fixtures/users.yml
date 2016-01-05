@@ -5,7 +5,6 @@
 #  id                     :integer          not null, primary key
 #  first_name             :string
 #  last_name              :string
-#  mail                   :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  project_id             :integer
@@ -26,9 +25,9 @@
 one:
   first_name: MyString
   last_name: MyString
-  mail: MyString
+  email: MyString
 
 two:
   first_name: MyString
   last_name: MyString
-  mail: MyString
+  email: MyString
