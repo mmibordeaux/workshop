@@ -9,6 +9,7 @@ gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'         # Bootstrap         
 gem 'uglifier'                                              # JS compressor                   https://github.com/lautis/uglifier
 gem 'jquery-rails'                                          # JQuery                          https://github.com/rails/jquery-rails
 gem 'devise'                                                # Authentication                  https://github.com/plataformatec/devise
+gem 'devise-i18n'                                           # Translations of authentication  https://github.com/tigrish/devise-i18n
 
 group :production do
   gem 'rails_12factor'
