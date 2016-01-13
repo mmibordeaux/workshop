@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :projects
   resources :users
+  resources :features
 
   root 'projects#index'
 end
