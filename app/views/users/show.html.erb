@@ -1,21 +1,2 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Mail:</strong>
-  <%= @user.email %>
-</p>
-
+<h1><%= @user %></h1>
 <p>Projet : <%= link_to @user.project, @user.project %></p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
