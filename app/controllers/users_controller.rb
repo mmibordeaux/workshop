@@ -31,6 +31,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @features = Feature.all
   end
 
   # GET /users/new

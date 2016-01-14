@@ -12,6 +12,9 @@
 
 class Feature < ActiveRecord::Base
 
+  has_and_belongs_to_many :projects, uniq: true
+  has_many :users, through: :projects
+
   def to_s
     "#{name}"
   end

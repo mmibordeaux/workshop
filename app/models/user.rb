@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :project
+  has_many :features, through: :project
 
   validates :email, presence: true
 

@@ -1,2 +1,11 @@
 <h1><%= @user %></h1>
 <p>Projet : <%= link_to @user.project, @user.project %></p>
+
+<h2>Caractéristiques validées</h2>
+<ul>
+<% @features.each do |feature| %>
+  <li<% if user.has_feature? feature %> class= " active"<% end %>>
+  <%= render partial: 'features/badge', locals: { feature: feature } %>
+  </li>
+<% end %>
+</ul>
