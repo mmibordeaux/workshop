@@ -10,6 +10,7 @@ gem 'uglifier'                                              # JS compressor     
 gem 'jquery-rails'                                          # JQuery                          https://github.com/rails/jquery-rails
 gem 'devise'                                                # Authentication                  https://github.com/plataformatec/devise
 gem 'devise-i18n'                                           # Translations of authentication  https://github.com/tigrish/devise-i18n
+gem 'cancancan'                                             # Authorization                   https://github.com/CanCanCommunity/cancancan
 
 group :production do
   gem 'rails_12factor'
