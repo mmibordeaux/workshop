@@ -23,9 +23,9 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <% if user_signed_in? %>
-                    <li><%= link_to 'Projets', projects_path %></li>
-                    <li><%= link_to 'Utilisateurs', users_path %></li>
-                    <li><%= link_to 'Caractéristiques', features_path %></li>
+                    <li><%= link_to 'Projets', projects_path if can? :read, :projects %></li>
+                    <li><%= link_to 'Utilisateurs', users_path if can? :read, :users %></li>
+                    <li><%= link_to 'Caractéristiques', features_path if can? :read, :features %></li>
                     <% else %>
                     <li><%= link_to "Connexion", new_session_path(resource_name) %></li>
                     <li><%= link_to "Inscription", new_registration_path(resource_name) %></li>
