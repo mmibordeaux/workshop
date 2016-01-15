@@ -32,7 +32,15 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true
 
+  before_create :set_as_admin_if_first
+
   def to_s
     "#{first_name} #{last_name}"
   end
+
+  private
+
+    def set_as_admin_if_first
+      self.admin = true unless User.any?
+    end
 end
