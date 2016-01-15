@@ -18,6 +18,7 @@
 #  last_sign_in_at        :datetime
 #  current_sign_in_ip     :inet
 #  last_sign_in_ip        :inet
+#  admin                  :boolean          default(FALSE)
 #
 
 require 'test_helper'
