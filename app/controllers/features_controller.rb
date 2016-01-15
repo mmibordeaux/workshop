@@ -11,6 +11,8 @@
 #
 
 class FeaturesController < ApplicationController
+  authorize_resource
+
   before_action :set_feature, only: [:show, :edit, :update, :destroy]
 
   # GET /features

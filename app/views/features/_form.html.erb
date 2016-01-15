@@ -1,13 +1,11 @@
 <%= simple_form_for(@feature) do |f| %>
-  <%= f.error_notification %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs form-group">
-    <%= f.input :name, input_html: { class: "form-control" } %>
-    <%= f.input :description, input_html: { class: "form-control" } %>
-    <%= f.input :icon, input_html: { class: "form-control" } %>
-  </div>
+    <div class="form-inputs">
+        <div class="form-group"><%= f.input :name, input_html: { class: "form-control" } %></div>
+        <div class="form-group"><%= f.input :description, input_html: { class: "form-control" } %></div>
+        <div class="form-group"><%= f.input :icon, input_html: { class: "form-control" } %></div>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-default" %>
-  </div>
+    <div class="form-actions"><%= f.button :submit, class: "btn btn-default" %></div>
 <% end %>
