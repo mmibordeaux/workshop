@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = User.where.not(admin: true).all
   end
 
   # GET /users/1
