@@ -34,6 +34,11 @@ class User < ActiveRecord::Base
 
   before_create :set_as_admin_if_first
 
+  include Gravtastic
+  gravtastic size: 100
+
+  delegate :has_feature?, to: :project
+
   def to_s
     "#{first_name} #{last_name}"
   end

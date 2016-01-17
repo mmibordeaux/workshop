@@ -1,11 +1,14 @@
-<h1><%= @user %></h1>
-<p>Projet : <%= link_to @user.project, @user.project %></p>
-
-<h2>Caractéristiques validées</h2>
-<ul>
-<% @features.each do |feature| %>
-  <li<% if user.has_feature? feature %> class= " active"<% end %>>
-  <%= render partial: 'features/badge', locals: { feature: feature } %>
-  </li>
-<% end %>
-</ul>
+<div class="row">
+  <div class="col-md-3">
+    <%= image_tag @user.gravatar_url, class: 'img-circle img-responsive' %><br/>
+    <h2><%= @user %></h2>
+    <p><%= link_to @user.project, @user.project %></p>
+  </div>
+  <div class="col-md-9">
+    <% @features.each do |feature| %>
+      <div class="col-md-3">
+        <%= render partial: 'features/badge', locals: { feature: feature, inactive: !@user.has_feature?(feature) } %>
+      </div>
+    <% end %>
+  </div>
+</div>

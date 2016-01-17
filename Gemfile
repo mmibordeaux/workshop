@@ -11,6 +11,7 @@ gem 'jquery-rails'                                          # JQuery            
 gem 'devise'                                                # Authentication                  https://github.com/plataformatec/devise
 gem 'devise-i18n'                                           # Translations of authentication  https://github.com/tigrish/devise-i18n
 gem 'cancancan'                                             # Authorization                   https://github.com/CanCanCommunity/cancancan
+gem 'gravtastic'                                            # Gravatar                        https://github.com/chrislloyd/gravtastic
 
 group :production do
   gem 'rails_12factor'

@@ -1,11 +1,15 @@
-<h1>
-  <%= render partial: 'badge', locals: { feature: @feature } %>
-</h1>
-<p><%= @feature.description %></p>
-
-<h2>Projets présentant cette caractéristique</h2>
-<ul>
-  <% @feature.projects.each do |project| %>
-    <li><%= link_to project, project %></li>
-  <% end %>
-</ul>
+<div class="row">
+    <div class="col-md-3">
+        <%= render partial: 'badge', locals: { feature: @feature } %>
+        <p><%= @feature.description %></p>
+        <%= link_to 'Edit', edit_feature_path(@feature) if can? :edit, @feature %>
+        <%= link_to 'Destroy', @feature, method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, @feature %>
+    </div>
+    <div class="col-md-9">
+        <% @feature.projects.each do |project| %>
+          <div class="col-md-3">
+            <%= link_to project, project %>
+          </div>
+        <% end %>
+    </div>
+</div>
