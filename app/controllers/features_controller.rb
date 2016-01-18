@@ -8,6 +8,8 @@
 #  icon        :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  position    :integer
+#  field_id    :integer
 #
 
 class FeaturesController < ApplicationController
@@ -17,7 +19,7 @@ class FeaturesController < ApplicationController
 
   # GET /features
   def index
-    @features = Feature.all
+    @fields = Field.all
   end
 
   # GET /features/1
@@ -67,6 +69,6 @@ class FeaturesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def feature_params
-      params.require(:feature).permit(:name, :description, :icon)
+      params.require(:feature).permit(:name, :description, :icon, :position, :field_id)
     end
 end

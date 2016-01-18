@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160115110051) do
+ActiveRecord::Schema.define(version: 20160118222744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20160115110051) do
     t.string   "icon"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "position"
+    t.integer  "field_id"
   end
 
   create_table "features_projects", id: false, force: :cascade do |t|
@@ -32,6 +34,14 @@ ActiveRecord::Schema.define(version: 20160115110051) do
   add_index "features_projects", ["feature_id", "project_id"], name: "index_features_projects_on_feature_id_and_project_id", using: :btree
   add_index "features_projects", ["feature_id"], name: "index_features_projects_on_feature_id", using: :btree
   add_index "features_projects", ["project_id"], name: "index_features_projects_on_project_id", using: :btree
+
+  create_table "fields", force: :cascade do |t|
+    t.string   "name"
+    t.string   "color"
+    t.integer  "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"

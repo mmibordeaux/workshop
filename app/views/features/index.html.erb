@@ -1,11 +1,12 @@
-<h1>Caractéristiques</h1>
-
-<div class="row">
-  <% @features.each do |feature| %>
-    <div class="col-md-2">
-      <%= link_to feature do %>
-        <%= render partial: 'badge', locals: { feature: feature } %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+<% @fields.each do |field| %>
+  <h2><%= field %></h2>
+  <div class="row">
+    <% field.features.each do |feature| %>
+      <div class="col-md-2">
+        <%= link_to feature do %>
+          <%= render partial: 'badge', locals: { feature: feature } %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

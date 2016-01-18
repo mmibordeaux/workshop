@@ -1,6 +1,6 @@
 <% inactive = false if inactive.nil? %>
 <%= link_to feature do %>
-  <div class="feature-badge<% if inactive %> inactive<% end %>">
+  <div class="feature-badge<% if inactive %> inactive<% end %>" style="background-color: #<%= feature.color %>">
     <i class="glyphicon <%= feature.icon %>"></i>
     <label><%= feature %></label>
   </div>

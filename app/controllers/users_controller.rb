@@ -23,7 +23,7 @@
 
 class UsersController < ApplicationController
   authorize_resource
-  
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
@@ -34,7 +34,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    @features = Feature.all
+    @fields = Field.all
   end
 
   # GET /users/new

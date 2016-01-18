@@ -8,6 +8,8 @@
 #  icon        :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  position    :integer
+#  field_id    :integer
 #
 
 module FeaturesHelper
