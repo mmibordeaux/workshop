@@ -17,7 +17,7 @@ class Feature < ActiveRecord::Base
   has_and_belongs_to_many :projects, uniq: true
   has_many :users, through: :projects
   belongs_to :field
-  default_scope { order('position') }
+  default_scope { order('position, level') }
 
   def color
     field.color unless field.nil? or field.color.nil?

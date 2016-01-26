@@ -2,6 +2,7 @@
 <%= link_to feature do %>
   <div class="feature-badge<% if inactive %> inactive<% end %>" style="background-color: #<%= feature.color %>">
     <i class="glyphicon <%= feature.icon %>"></i>
+    <span class="level"><%= feature.level %></span>
     <label><%= feature %></label>
   </div>
 <% end %>
