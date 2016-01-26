@@ -10,6 +10,7 @@
 #  updated_at  :datetime         not null
 #  position    :integer
 #  field_id    :integer
+#  level       :integer
 #
 
 class FeaturesController < ApplicationController
@@ -69,6 +70,6 @@ class FeaturesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def feature_params
-      params.require(:feature).permit(:name, :description, :icon, :position, :field_id)
+      params.require(:feature).permit(:name, :description, :icon, :position, :field_id, :level)
     end
 end

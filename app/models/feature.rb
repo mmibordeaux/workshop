@@ -10,6 +10,7 @@
 #  updated_at  :datetime         not null
 #  position    :integer
 #  field_id    :integer
+#  level       :integer
 #
 
 class Feature < ActiveRecord::Base
