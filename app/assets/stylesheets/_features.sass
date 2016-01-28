@@ -1,39 +1,47 @@
 .feature-badge
   background-color: #999
   border-radius: 100%
-  border-color: rgba(0, 0, 0, 0.2)
-  border-width: 8px
-  border-style: solid
   width: 150px
   height: 150px
   text-align: center
   display: inline-block
   margin-bottom: 10px
+  position: relative
+  .pattern
+    position: absolute
+    top: 0
+    left: 0
+    width: 150px
+    height: 150px
+    background-image: asset-url('badge.png')
+    background-position: center center
+    border-radius: 100%
+    mix-blend-mode: multiply
   &.inactive
     opacity: 0.2
-  .level
-    position: absolute
-    font-size: 25px
-    top: 75px
-    left: 40px
-    font-weight: bold
-    color: black
   .glyphicon
     position: absolute
-    width: 150px
-    top: 0
-    left: 10px
+    width: 140px
+    top: 10px
+    left: 0px
     font-size: 50px
     color: white
     line-height: 90px
+  .level
+    position: absolute
+    font-size: 18px
+    top: 15px
+    left: 100px
+    font-weight: 700
+    color: rgba(255, 255, 255, 0.5)
   label
     position: absolute
-    text-align: left
-    top: 80px
-    left: 60px
-    width: 90px
+    text-align: center
+    top: 90px
+    left: 15px
+    width: 120px
     color: white
     font-size: 16px
-    font-weight: 400
+    font-weight: 700
     text-transform: uppercase
     line-height: 16px
