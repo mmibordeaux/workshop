@@ -25,6 +25,7 @@ class FeaturesController < ApplicationController
 
   # GET /features/1
   def show
+    @projects = Project.all
   end
 
   # GET /features/new
