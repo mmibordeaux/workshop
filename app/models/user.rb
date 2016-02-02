@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
   delegate :has_feature?, to: :project
 
   def to_s
-    "#{first_name} #{last_name}"
+    "#{email}"
   end
 
   private
