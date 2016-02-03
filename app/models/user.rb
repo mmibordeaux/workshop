@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
   delegate :has_feature?, to: :project
 
   def to_s
-    if first_name.empty? or last_name.empty?
+    if first_name.nil? or last_name.nil?
       "#{email}"
     else
       "#{first_name} #{last_name}"
