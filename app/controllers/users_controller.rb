@@ -32,6 +32,16 @@ class UsersController < ApplicationController
     @users = User.where.not(admin: true).all
   end
 
+  def me
+    @user = current_user
+  end
+
+  def update_me
+    @user = current_user
+    @user.update(user_params)
+    redirect_to users_path
+  end
+
   # GET /users/1
   def show
     @fields = Field.all

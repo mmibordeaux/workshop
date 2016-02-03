@@ -8,6 +8,8 @@ class Ability
       can :manage, :all
     else
       can :read, :all
+      can :me, User
+      can :update_me, User
     end
   end
 end

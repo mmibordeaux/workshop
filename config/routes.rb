@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :fields
   devise_for :users
-
   resources :projects
+  get 'users/me' => 'users#me', as: 'my_profile'
+  patch 'users/me' => 'users#update_me', as: 'update_my_profile'
   resources :users
   resources :features
-
+  resources :fields
   root 'projects#index'
 end

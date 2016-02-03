@@ -2,7 +2,8 @@
   <div class="col-md-3">
     <%= image_tag @user.gravatar_url, class: 'img-circle img-responsive' %><br/>
     <h1><%= @user %></h1>
-    <p><%= link_to @user.project, @user.project %></p>
+    <p><%= @user.email %></p>
+    <p><%= link_to @user.project, @user.project unless @user.project.nil? %></p>
   </div>
   <div class="col-md-9">
     <%= render partial:'fields/list', locals: { fields: @fields, project: @user.project } unless @user.project.nil? %>
