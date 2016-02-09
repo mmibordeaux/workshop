@@ -19,6 +19,7 @@
 #  current_sign_in_ip     :inet
 #  last_sign_in_ip        :inet
 #  admin                  :boolean          default(FALSE)
+#  diploma_year           :integer
 #
 
 class User < ActiveRecord::Base
