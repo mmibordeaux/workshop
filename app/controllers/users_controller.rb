@@ -39,7 +39,7 @@ class UsersController < ApplicationController
 
   def update_me
     @user = current_user
-    @user.update(user_params)
+    @user.update params.require(:user).permit(:first_name, :last_name, :diploma_year)
     redirect_to users_path
   end
 
