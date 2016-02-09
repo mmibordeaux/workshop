@@ -1,10 +1,9 @@
+<%= link_to 'New', new_project_path, class: 'btn btn-primary' if can? :create, Project %>
 <div class="row">
-  <%= link_to 'New', new_project_path if can? :create, Project %>
   <% @projects.each do |project| %>
-    <div class="col-md3">
+    <div class="col-md-3">
       <%= link_to project do %>
-        <h2><%= project.name %></h2>
-        <p><%= project.description %></p>
+        <%= render 'project', project: project %>
       <% end %>
     </div>
   <% end %>

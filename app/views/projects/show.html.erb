@@ -1,21 +1,20 @@
 <div class="row">
-    <div class="col-md-3">
-        <h1><%= @project %></h1>
-        <p><%= @project.description %></p>
-        <ul class="list-unstyled">
-          <% @project.users.each do |user| %>
-            <li>
-              <%= link_to user do %>
-                <%= image_tag user.gravatar_url(size: 25), class: 'img-circle' %>
-                <%= user %>
-              <% end %>
-            </li>
+  <div class="col-md-3">
+    <%= render 'project', project: @project %>
+    <ul class="list-unstyled">
+      <% @project.users.each do |user| %>
+        <li>
+          <%= link_to user do %>
+            <%= image_tag user.gravatar_url(size: 25), class: 'img-circle' %>
+            <%= user %>
           <% end %>
-        </ul>
-        <%= link_to 'Edit', edit_project_path(@project) if can? :edit, @project %>
-        <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, @project %>
-    </div>
-    <div class="col-md-9">
-      <%= render partial:'fields/list', locals: { fields: @fields, project: @project } %>
-    </div>
+        </li>
+      <% end %>
+    </ul>
+    <%= link_to 'Edit', edit_project_path(@project) if can? :edit, @project %>
+    <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, @project %>
+  </div>
+  <div class="col-md-9">
+    <%= render partial:'fields/list', locals: { fields: @fields, project: @project } %>
+  </div>
 </div>
