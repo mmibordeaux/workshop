@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :users
   resources :features
   resources :fields
-  root 'projects#index'
+  root 'features#index'
 end
