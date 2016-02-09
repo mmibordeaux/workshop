@@ -13,6 +13,8 @@ class Project < ActiveRecord::Base
   has_many :users
   has_and_belongs_to_many :features, uniq: true
 
+  default_scope { order('name') }
+
   validates :name, presence: true
 
   def has_feature?(feature)
