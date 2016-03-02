@@ -11,7 +11,10 @@
 #
 
 class FieldsController < ApplicationController
+  authorize_resource
+
   before_action :set_field, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /fields
   def index

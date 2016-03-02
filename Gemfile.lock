@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/twbs/bootstrap-sass.git
-  revision: d07b75677e830090e11a0039613e9bdc5ba65df1
+  revision: 31acbea483821acb726f1b4880d1452aee90367e
   specs:
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
@@ -48,7 +48,7 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (~> 10.4)
     arel (6.0.3)
-    autoprefixer-rails (6.3.0)
+    autoprefixer-rails (6.3.1)
       execjs
       json
     bcrypt (3.1.10)
