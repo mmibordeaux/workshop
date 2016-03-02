@@ -39,7 +39,7 @@ class FieldsController < ApplicationController
     @field = Field.new(field_params)
 
     if @field.save
-      redirect_to @field, notice: 'Field was successfully created.'
+      redirect_to fields_url, notice: 'Field was successfully created.'
     else
       render :new
     end
@@ -48,7 +48,7 @@ class FieldsController < ApplicationController
   # PATCH/PUT /fields/1
   def update
     if @field.update(field_params)
-      redirect_to @field, notice: 'Field was successfully updated.'
+      redirect_to fields_url, notice: 'Field was successfully updated.'
     else
       render :edit
     end

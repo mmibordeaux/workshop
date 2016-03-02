@@ -1,31 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+    <div class="col-md-10"><h1>Fields</h1></div>
+    <div class="col-md-2"><%= link_to 'New', new_field_path, class: 'btn btn-primary' if can? :create, Field %></div>
+</div>
 
-<h1>Listing Fields</h1>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Color</th>
+                <th>Position</th>
+                <th colspan="2"></th>
+            </tr>
+        </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Color</th>
-      <th>Position</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @fields.each do |field| %>
-      <tr>
-        <td><%= field.name %></td>
-        <td><%= field.color %></td>
-        <td><%= field.position %></td>
-        <td><%= link_to 'Show', field %></td>
-        <td><%= link_to 'Edit', edit_field_path(field) %></td>
-        <td><%= link_to 'Destroy', field, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Field', new_field_path %>
+        <tbody>
+            <% @fields.each do |field| %>
+            <tr>
+                <td><%= field.name %></td>
+                <td><%= field.color %></td>
+                <td><%= field.position %></td>
+                <td><%= link_to 'Edit', edit_field_path(field), class: 'btn btn-default' %></td>
+                <td><%= link_to 'Destroy', field, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

@@ -1,13 +1,18 @@
-<%= simple_form_for(@field) do |f| %>
-  <%= f.error_notification %>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <p id="notice" class="text-info"><%= notice %></p>
+        <p id="alert" class="text-danger"><%= alert %></p>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :color %>
-    <%= f.input :position %>
-  </div>
+        <%= simple_form_for(@field) do |f| %>
+            <%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+            <div class="form-group"><%= f.input :name, input_html: { class: 'form-control' } %></div>
+            <div class="form-group"><%= f.input :color, input_html: { class: 'form-control' } %></div>
+            <div class="form-group"><%= f.input :position, input_html: { class: 'form-control' } %></div>
+
+            <div class="form-actions">
+                <%= f.button :submit %>
+            </div>
+        <% end %>
+    </div>
+</div>
