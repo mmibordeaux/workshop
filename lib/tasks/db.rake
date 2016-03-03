@@ -1,3 +1,6 @@
+# http://manuel.manuelles.nl/blog/2012/01/19/rake-pull-me-that-db/
+# http://adam.herokuapp.com/past/2009/2/11/taps_for_easy_database_transfers/
+
 namespace :db do
   desc "Pull a postgres database from Heroku"
 
