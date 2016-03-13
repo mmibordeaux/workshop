@@ -40,6 +40,8 @@ class User < ActiveRecord::Base
 
   delegate :has_feature?, to: :project
 
+  default_scope { order('last_name, first_name') }
+
   def to_s
     if first_name.nil? or last_name.nil?
       "#{email}"
