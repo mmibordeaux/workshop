@@ -3,7 +3,8 @@
   <div class="col-md-2 user">
     <%= link_to user do %>
       <%= image_tag user.gravatar_url, class: 'img-circle img-responsive' %><br/>
-      <%= user %> 
+      <%= user %><br/>
+      <small><%= link_to user.project, user.project unless user.project.nil? %></small>
     <% end %>
   </div>
   <% end %>
