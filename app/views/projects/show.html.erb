@@ -2,9 +2,9 @@
 <div class="row">
   <div class="col-md-3">
     <%= render 'project', project: @project %>
-    <ul class="list-unstyled">
+    <ul class="list-group">
       <% @project.users.each do |user| %>
-        <li>
+        <li class="list-group-item">
           <%= link_to user do %>
             <%= image_tag user.gravatar_url(size: 25), class: 'img-circle' %>
             <%= user %>
