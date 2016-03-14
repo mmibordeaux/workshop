@@ -7,6 +7,7 @@
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  url         :string
 #
 
 class ProjectsController < ApplicationController
@@ -66,6 +67,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, feature_ids: [])
+    params.require(:project).permit(:name, :description, :url, feature_ids: [])
   end
 end
