@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Caractéristique</th>
@@ -14,7 +14,7 @@
         <td><%= feature %></td>
         <td><%= feature.level %></td>
         <% @projects.each do |project| %>
-          <td><% if project.has_feature?(@feature) %>X<% end %></td>
+          <td><% if project.has_feature?(feature) %>X<% end %></td>
         <% end %>
       </tr>
     <% end %>
