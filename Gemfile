@@ -12,6 +12,8 @@ gem 'devise'                                                # Authentication    
 gem 'devise-i18n'                                           # Translations of authentication  https://github.com/tigrish/devise-i18n
 gem 'cancancan'                                             # Authorization                   https://github.com/CanCanCommunity/cancancan
 gem 'gravtastic'                                            # Gravatar                        https://github.com/chrislloyd/gravtastic
+gem 'chartkick'                                             # Charts                          https://github.com/ankane/chartkick
+gem 'highcharts-rails'                                      # High Charts                      https://github.com/PerfectlyNormal/highcharts-rails
 
 group :production do
   gem 'rails_12factor'
