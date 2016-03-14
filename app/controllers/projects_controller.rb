@@ -21,6 +21,11 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  def synthesis
+    @projects = Project.all
+    @features = Feature.all
+  end
+
   # GET /projects/1
   def show
     @fields = Field.all
