@@ -8,6 +8,8 @@
 #  position   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  icon       :string
+#  parent_id  :integer
 #
 
 module FieldsHelper

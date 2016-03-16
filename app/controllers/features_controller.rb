@@ -21,7 +21,7 @@ class FeaturesController < ApplicationController
 
   # GET /features
   def index
-    @fields = Field.all
+    @fields = Field.all.where(parent_id: nil)
   end
 
   def synthesis

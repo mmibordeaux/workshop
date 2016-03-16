@@ -2,7 +2,7 @@
 <% @fields.each do |field| %>
   <h2><%= field %></h2>
   <div class="row">
-    <% field.features.each do |feature| %>
+    <% field.all_features.each do |feature| %>
       <div class="col-xs-6 col-sm-3 col-md-2">
         <%= render partial: 'badge', locals: { feature: feature } %>
       </div>
