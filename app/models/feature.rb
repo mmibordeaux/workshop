@@ -23,9 +23,9 @@ class Feature < ActiveRecord::Base
     field.smart_color unless field.nil?
   end
 
-  def icon 
-    field.icon
-  end
+  # def icon 
+  #   field.icon
+  # end
 
   def name_with_hierarchy
     "#{field.ancestors} #{name}"
