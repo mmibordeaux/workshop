@@ -8,6 +8,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  url         :string
+#  github      :string
 #
 
 require 'test_helper'

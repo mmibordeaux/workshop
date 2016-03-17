@@ -8,6 +8,7 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  url         :string
+#  github      :string
 #
 
 class ProjectsController < ApplicationController
@@ -72,6 +73,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, :url, feature_ids: [])
+    params.require(:project).permit(:name, :description, :url, :github, feature_ids: [])
   end
 end
