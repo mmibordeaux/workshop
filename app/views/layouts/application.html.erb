@@ -17,6 +17,7 @@
         <nav>
             <ul>
                 <% if user_signed_in? %>
+                <li><%= link_to 'Workshops', workshops_path if can? :read, :workshops %></li>
                 <li><%= link_to 'Projets', projects_path if can? :read, :projects %></li>
                 <li><%= link_to 'Utilisateurs', users_path if can? :read, :users %></li>
                 <li><%= link_to 'Caractéristiques', features_path if can? :read, :features %></li>

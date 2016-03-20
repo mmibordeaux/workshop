@@ -1,19 +1,24 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title, @workshop %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @workshop.name %>
-</p>
+<div class="row">
+    <div class="col-md-3">
+        <article class="project thumbnail">
+            <h1><%= @workshop.name %></h1>
+            <% if @workshop.description %><div><%= @workshop.description %></div><% end %>
+            <% if @workshop.url %><p><%= link_to @workshop.url, @workshop.url, target: :blank %></p><% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @workshop.description %>
-</p>
+            <%= link_to 'Edit', edit_workshop_path(@workshop), class: "btn btn-default" if can? :edit, @workshop %>
+            <%= link_to 'Destroy', @workshop, method: :delete, class: "btn btn-default", data: { confirm: 'Are you sure?' } if can? :destroy, @workshop %>
+        </article>
+    </div>
 
-<p>
-  <strong>Url:</strong>
-  <%= @workshop.url %>
-</p>
-
-<%= link_to 'Edit', edit_workshop_path(@workshop) %> |
-<%= link_to 'Back', workshops_path %>
+    <% if @workshop.projects.any? %>
+    <div class="row">
+        <% @workshop.projects.each do |project| %>
+        <div class="col-md-3">
+            <%= link_to project, project %>
+        </div>
+        <% end %>
+    </div>
+    <% end %>
+</div>

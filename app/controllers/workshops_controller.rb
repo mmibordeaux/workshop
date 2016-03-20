@@ -11,6 +11,9 @@
 #
 
 class WorkshopsController < ApplicationController
+  authorize_resource
+
+  before_action :authenticate_user!
   before_action :set_workshop, only: [:show, :edit, :update, :destroy]
 
   # GET /workshops

@@ -74,6 +74,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, :url, :github, feature_ids: [])
+    params.require(:project).permit(:name, :description, :url, :github, :workshop_id, feature_ids: [])
   end
 end
