@@ -55,6 +55,7 @@ GEM
     builder (3.2.2)
     byebug (8.2.1)
     cancancan (1.13.1)
+    chartkick (1.4.2)
     concurrent-ruby (1.0.0)
     debug_inspector (0.0.2)
     devise (3.5.3)
@@ -70,6 +71,8 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     gravtastic (3.2.6)
+    highcharts-rails (4.1.9)
+      railties (>= 3.1)
     i18n (0.7.0)
     jquery-rails (4.1.0)
       rails-dom-testing (~> 1.0)
@@ -163,9 +166,11 @@ DEPENDENCIES
   bootstrap-sass!
   byebug
   cancancan
+  chartkick
   devise
   devise-i18n
   gravtastic
+  highcharts-rails
   jquery-rails
   pg
   rails (= 4.2.1)

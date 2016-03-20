@@ -8,6 +8,8 @@
 #  position   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  icon       :string
+#  parent_id  :integer
 #
 
 class FieldsController < ApplicationController
@@ -68,6 +70,6 @@ class FieldsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def field_params
-      params.require(:field).permit(:name, :color, :position)
+      params.require(:field).permit(:name, :color, :position, :parent_id, :icon)
     end
 end

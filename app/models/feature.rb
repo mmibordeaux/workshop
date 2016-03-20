@@ -20,7 +20,15 @@ class Feature < ActiveRecord::Base
   default_scope { order('position, level') }
 
   def color
-    field.color unless field.nil? or field.color.nil?
+    field.smart_color unless field.nil?
+  end
+
+  def icon 
+    field.icon
+  end
+
+  def name_with_hierarchy
+    "#{field.ancestors} #{name} (#{description})"
   end
 
   def to_s

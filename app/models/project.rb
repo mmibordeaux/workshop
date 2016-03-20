@@ -7,6 +7,8 @@
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  url         :string
+#  github      :string
 #
 
 class Project < ActiveRecord::Base
@@ -19,6 +21,18 @@ class Project < ActiveRecord::Base
 
   def has_feature?(feature)
   	features.include? feature
+  end
+
+  def note
+    features_with_level(1) + features_with_level(2)*2 + features_with_level(3)*3
+  end
+
+  def features_with_level(level)
+    result = 0
+    Feature.all.each do |feature|
+      result += 1 if has_feature? feature and feature.level == level
+    end
+    result 
   end
 
   def to_s

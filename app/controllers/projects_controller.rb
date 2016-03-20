@@ -7,6 +7,8 @@
 #  description :text
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  url         :string
+#  github      :string
 #
 
 class ProjectsController < ApplicationController
@@ -18,6 +20,11 @@ class ProjectsController < ApplicationController
   # GET /projects
   def index
     @projects = Project.all
+  end
+
+  def synthesis
+    @projects = Project.all
+    @features = Feature.all
   end
 
   # GET /projects/1
@@ -66,6 +73,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, feature_ids: [])
+    params.require(:project).permit(:name, :description, :url, :github, feature_ids: [])
   end
 end
