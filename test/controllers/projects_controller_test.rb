@@ -9,6 +9,7 @@
 #  updated_at  :datetime         not null
 #  url         :string
 #  github      :string
+#  workshop_id :integer
 #
 
 require 'test_helper'

@@ -9,11 +9,13 @@
 #  updated_at  :datetime         not null
 #  url         :string
 #  github      :string
+#  workshop_id :integer
 #
 
 class Project < ActiveRecord::Base
   has_many :users
   has_and_belongs_to_many :features, uniq: true
+  belongs_to :workshop
 
   default_scope { order('name') }
 

@@ -1,16 +1,17 @@
 # == Schema Information
 #
-# Table name: projects
+# Table name: workshops
 #
 #  id          :integer          not null, primary key
-#  name        :string
+#  name        :string           not null
 #  description :text
+#  url         :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  url         :string
-#  github      :string
-#  workshop_id :integer
 #
 
-module ProjectsHelper
+class Workshop < ActiveRecord::Base
+  has_many :projects
+
+  validates :name, presence: true
 end
