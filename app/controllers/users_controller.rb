@@ -33,6 +33,11 @@ class UsersController < ApplicationController
     @users = User.where.not(admin: true).all
   end
 
+  def diploma
+    @year = params[:year]
+    @users = User.where.not(admin: true).where(diploma_year: @year).order(:last_name, :first_name).all
+  end
+
   def me
     @user = current_user
   end

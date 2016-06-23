@@ -10,6 +10,7 @@
 #  url         :string
 #  github      :string
 #  workshop_id :integer
+#  notes       :text
 #
 
 require 'test_helper'

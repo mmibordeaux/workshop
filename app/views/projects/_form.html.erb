@@ -7,6 +7,7 @@
   <%= f.input :workshop_id, collection: Workshop.all %>
   <%= f.input :url %>
   <%= f.input :github %>
+  <%= f.input :notes %>
   <%= f.association :features, 
         as: :check_boxes, 
         label: 'Caractéristiques', 
