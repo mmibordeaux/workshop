@@ -1,19 +1,18 @@
 <% content_for :title, @user %>
-<div class="row">
-  <div class="col-md-3">
-    <%= image_tag @user.gravatar_url, class: 'img-circle img-responsive' %><br/>
-    <h1><%= @user %></h1>
-    <p><%= @user.email %></p>
-    <% unless @user.project.nil? %>
-      <p><%= link_to @user.project, @user.project %></p>
-      <% if can? :edit, @user.project %>
-        <textarea><%= @user.project.notes %></textarea>
-      <% end %>
-    <% end %>
+<%= image_tag @user.gravatar_url, class: 'img-circle img-responsive center-block' %><br/>
+<%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-default' if can? :edit, @user %>
 
-    <%= link_to 'Edit', edit_user_path(@user) if can? :edit, @user %>
+<% @user.projects.each do |project| %>
+  <div class="row">
+    <div class="col-md-2">
+      <h2><%= project %></h2>
+      <p><%= project.workshop %></p>
+      <% if can? :edit, project %>
+        <textarea><%= project.notes %></textarea>
+      <% end %>
+    </div>
+    <div class="col-md-10">
+      <%= render partial:'fields/list', locals: { fields: @fields, project: @user.project } unless @user.project.nil? %>
+    </div>
   </div>
-  <div class="col-md-9">
-    <%= render partial:'fields/list', locals: { fields: @fields, project: @user.project } unless @user.project.nil? %>
-  </div>
-</div>
+<% end %>

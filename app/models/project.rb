@@ -38,10 +38,6 @@ class Project < ActiveRecord::Base
     result 
   end
 
-  # def project
-  #   projects.order(created_at: :desc).first
-  # end
-
   def name_with_session
     "#{name} (#{workshop})"
   end

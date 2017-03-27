@@ -28,7 +28,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  belongs_to :project
   has_and_belongs_to_many :projects
   has_many :features, through: :project
 
@@ -42,6 +41,10 @@ class User < ActiveRecord::Base
   delegate :has_feature?, to: :project
 
   default_scope { order('last_name, first_name') }
+
+  def project
+    projects.order(created_at: :desc).first
+  end
 
   def to_s
     if first_name.nil? or last_name.nil?
