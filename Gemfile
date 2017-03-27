@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.2.4'
+ruby '2.3.3'
 
-gem 'rails', '4.2.1'                                        # App                             https://github.com/rails/rails
+gem 'rails', '5.0.2'                                        # App                             https://github.com/rails/rails
 gem 'pg'                                                    # PostgreSQL database             https://bitbucket.org/ged/ruby-pg/src
+gem 'passenger'
 gem 'simple_form'                                           # Forms                           https://github.com/plataformatec/simple_form
 gem 'sass-rails'                                            # SASS                            https://github.com/rails/sass-rails
-gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'         # Bootstrap                       https://github.com/twbs/bootstrap-sass
+gem 'bootstrap-sass'                                        # Bootstrap                       https://github.com/twbs/bootstrap-sass
 gem 'uglifier'                                              # JS compressor                   https://github.com/lautis/uglifier
 gem 'jquery-rails'                                          # JQuery                          https://github.com/rails/jquery-rails
 gem 'devise'                                                # Authentication                  https://github.com/plataformatec/devise
@@ -13,7 +14,7 @@ gem 'devise-i18n'                                           # Translations of au
 gem 'cancancan'                                             # Authorization                   https://github.com/CanCanCommunity/cancancan
 gem 'gravtastic'                                            # Gravatar                        https://github.com/chrislloyd/gravtastic
 gem 'chartkick'                                             # Charts                          https://github.com/ankane/chartkick
-gem 'highcharts-rails'                                      # High Charts                      https://github.com/PerfectlyNormal/highcharts-rails
+gem 'highcharts-rails'                                      # High Charts                     https://github.com/PerfectlyNormal/highcharts-rails
 
 group :production do
   gem 'rails_12factor'

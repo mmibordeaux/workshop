@@ -24,3 +24,5 @@ module Mmiworkshop
     config.active_record.raise_in_transactional_callbacks = true
   end
 end
+
+ActiveSupport.halt_callback_chains_on_return_false = false
