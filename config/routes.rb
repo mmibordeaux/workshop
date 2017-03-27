@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :workshops
+  resources :workshops do 
+    get :synthesis
+  end
   devise_for :users
   resources :projects do
     collection do

@@ -1,0 +1,54 @@
+<% content_for :title, "#{@workshop} synthesis" %>
+
+<h2>Projets</h2>
+<%= column_chart @projects.map{|p| [p.to_s, p.note]} %>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Projet</th>
+      <th>Indicateur</th>
+      <th>Niveau 1</th>
+      <th>Niveau 2</th>
+      <th>Niveau 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project %></td>
+        <td><%= project.note %></td>
+        <td><%= project.features_with_level 1 %></td>
+        <td><%= project.features_with_level 2 %></td>
+        <td><%= project.features_with_level 3 %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Caractéristiques</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Champ</th>
+      <th>Caractéristique</th>
+      <th>Niveau</th>
+      <% @projects.each do |project| %>
+        <th><%= project %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @fields.each do |field| %>
+      <% field.features.each do |feature| %>
+        <tr>
+          <td><%= field %></td>
+          <td><%= feature %></td>
+          <td><%= feature.level %></td>
+          <% @projects.each do |project| %>
+            <td><% if project.has_feature?(feature) %>X<% end %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

@@ -14,7 +14,7 @@ class WorkshopsController < ApplicationController
   authorize_resource
 
   before_action :authenticate_user!
-  before_action :set_workshop, only: [:show, :edit, :update, :destroy]
+  before_action :set_workshop
 
   # GET /workshops
   def index
@@ -23,6 +23,11 @@ class WorkshopsController < ApplicationController
 
   # GET /workshops/1
   def show
+  end
+
+  def synthesis
+    @projects = @workshop.projects
+    @fields = Field.all
   end
 
   # GET /workshops/new
@@ -63,7 +68,8 @@ class WorkshopsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_workshop
-      @workshop = Workshop.find(params[:id])
+      @workshop = Workshop.find params[:id] if params.include? :id
+      @workshop = Workshop.find params[:workshop_id] if params.include? :workshop_id
     end
 
     # Only allow a trusted parameter "white list" through.
