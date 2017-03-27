@@ -32,8 +32,11 @@
         </nav>
     </div>
     <div class="jumbotron">
-        <%= link_to root_path do %>
-        mmi <span>workshop</span>
+        <% if yield(:title).present? %>
+          <div class="logo"><%= link_to root_path do %>mmi <span>workshop</span><% end %></div>
+          <%= yield :title %>
+        <% else %>
+          <%= link_to root_path do %>mmi <span>workshop</span><% end %>
         <% end %>
     </div>
     <div class="container">

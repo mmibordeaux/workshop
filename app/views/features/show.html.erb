@@ -9,7 +9,7 @@
     <% if @projects.any? %>
       <div class="col-md-9">
           <% @projects.each do |project| %>
-            <div class="col-md-3<% if !project.has_feature?(@feature) %> inactive<% end %>">
+            <div class="col-md-4<% if !project.has_feature?(@feature) %> inactive<% end %>">
               <%= render 'projects/project', project: project %>
             </div>
           <% end %>
