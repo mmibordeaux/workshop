@@ -14,7 +14,7 @@
 #
 
 class Project < ActiveRecord::Base
-  has_many :users
+  has_and_belongs_to_many :users
   has_and_belongs_to_many :features, uniq: true
   belongs_to :workshop
 
@@ -36,6 +36,10 @@ class Project < ActiveRecord::Base
       result += 1 if has_feature? feature and feature.level == level
     end
     result 
+  end
+
+  def name_with_session
+    "#{name} (#{workshop})"
   end
 
   def to_s

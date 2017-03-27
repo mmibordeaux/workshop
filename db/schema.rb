@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623164257) do
+ActiveRecord::Schema.define(version: 20170327114123) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,11 +29,10 @@ ActiveRecord::Schema.define(version: 20160623164257) do
   create_table "features_projects", id: false, force: :cascade do |t|
     t.integer "feature_id"
     t.integer "project_id"
+    t.index ["feature_id", "project_id"], name: "index_features_projects_on_feature_id_and_project_id", using: :btree
+    t.index ["feature_id"], name: "index_features_projects_on_feature_id", using: :btree
+    t.index ["project_id"], name: "index_features_projects_on_project_id", using: :btree
   end
-
-  add_index "features_projects", ["feature_id", "project_id"], name: "index_features_projects_on_feature_id_and_project_id", using: :btree
-  add_index "features_projects", ["feature_id"], name: "index_features_projects_on_feature_id", using: :btree
-  add_index "features_projects", ["project_id"], name: "index_features_projects_on_project_id", using: :btree
 
   create_table "fields", force: :cascade do |t|
     t.string   "name"
@@ -57,6 +55,13 @@ ActiveRecord::Schema.define(version: 20160623164257) do
     t.text     "notes"
   end
 
+  create_table "projects_users", id: false, force: :cascade do |t|
+    t.integer "project_id", null: false
+    t.integer "user_id",    null: false
+    t.index ["project_id", "user_id"], name: "index_projects_users_on_project_id_and_user_id", using: :btree
+    t.index ["user_id", "project_id"], name: "index_projects_users_on_user_id_and_project_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -75,10 +80,9 @@ ActiveRecord::Schema.define(version: 20160623164257) do
     t.inet     "last_sign_in_ip"
     t.boolean  "admin",                  default: false
     t.integer  "diploma_year"
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "workshops", force: :cascade do |t|
     t.string   "name",        null: false
