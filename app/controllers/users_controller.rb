@@ -36,6 +36,11 @@ class UsersController < ApplicationController
   def diploma
     @year = params[:year]
     @users = User.where.not(admin: true).where(diploma_year: @year).order(:last_name, :first_name).all
+    @workshops = Workshop.all.order(created_at: :desc)
+  end
+
+  def without_diploma
+    @users = User.where.not(admin: true).where('(diploma_year=0 or diploma_year IS NULL)').order(:last_name, :first_name).all
   end
 
   def me

@@ -1,23 +1,29 @@
 <% content_for :title, "Utilisateurs #{@year}" %>
 <h1><%= "#{@year}" %></h1>
 <p><%= @users.count %> personnes</p>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Prénom</th>
-      <th>Projet</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @users.each do |user| %>
+
+<% @workshops.each do |workshop| %>
+  <h2><%= workshop %></h2>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= user.last_name %></td>
-        <td><%= user.first_name %></td>
-        <td><%= user.project %></td>
-        <td><textarea rows="1"><%= user.project.notes unless user.project.nil? %></textarea></td>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Projet</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <% project = user.project_in_workshop workshop %>
+        <tr>
+          <td><%= user.last_name %></td>
+          <td><%= user.first_name %></td>
+          <td><%= project %></td>
+          <% project.notes.split('	').each do |note| %>
+            <td><%= note %></td>
+          <% end unless project.nil? %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

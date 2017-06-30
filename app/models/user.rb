@@ -46,6 +46,10 @@ class User < ActiveRecord::Base
     projects.order(created_at: :desc).first
   end
 
+  def project_in_workshop(workshop)
+    projects.where(workshop: workshop).first
+  end
+
   def to_s
     if first_name.nil? or last_name.nil?
       "#{email}"

@@ -1,0 +1,21 @@
+<% content_for :title, 'Utilisateurs sans année de diplôme' %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Mail</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Edition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.first_name %></td>
+        <td><%= link_to 'Edit', edit_user_path(user), class: 'btn btn-default btn-xs' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</div>

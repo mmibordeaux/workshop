@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   end
   get 'users/me' => 'users#me', as: 'my_profile'
   patch 'users/me' => 'users#update_me', as: 'update_my_profile'
-  resources :users
+  get 'users/without-diploma' => 'users#without_diploma'
   get 'users/diploma/:year' => 'users#diploma', as: 'users_by_diploma'
+  resources :users
   resources :features do
     collection do
       get 'synthesis'
