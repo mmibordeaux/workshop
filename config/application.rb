@@ -21,5 +21,3 @@ module Mmiworkshop
     # config.i18n.default_locale = :de
   end
 end
-
-ActiveSupport.halt_callback_chains_on_return_false = false

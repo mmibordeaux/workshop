@@ -8,15 +8,17 @@
     <tr>
       <th>Prénom</th>
       <th>Nom</th>
+      <th>Mail</th>
       <th>Projets</th>
     </tr>
   </thead>
   <tbody>
     <% @promotion.users.each do |user| %>
       <tr>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.project %></td>
+        <td><%= link_to user.first_name, user %></td>
+        <td><%= link_to user.last_name, user %></td>
+        <td><%= link_to user.email, user %></td>
+        <td><%= link_to user.project, user.project %></td>
       </tr>
     <% end %>
   </tbody>

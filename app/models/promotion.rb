@@ -9,7 +9,7 @@
 #
 
 class Promotion < ApplicationRecord
-  has_many :users
+  has_many :users, dependent: :nullify
   after_initialize :gather_users
   
   def to_s
