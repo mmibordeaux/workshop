@@ -12,7 +12,7 @@ class Promotion < ApplicationRecord
   has_many :users, dependent: :nullify
   after_initialize :gather_users
 
-  default_scope { order(:diploma_year) }
+  default_scope { order(diploma_year: :desc) }
   
   def to_s
     "#{diploma_year}"
