@@ -1,20 +1,18 @@
 <% content_for :title, 'Promotions' %>
-<%= link_to 'New Promotion', new_promotion_path, class: 'btn btn-primary' %>
+<%= link_to 'New Promotion', new_promotion_path, class: 'btn btn-primary' if can? :create, Promotion %>
 <table class="table">
   <thead>
     <tr>
-      <th>Diploma year</th>
-      <th colspan="3"></th>
+      <th>Diplôme</th>
+      <th>Etudiants</th>
     </tr>
   </thead>
 
   <tbody>
     <% @promotions.each do |promotion| %>
       <tr>
-        <td><%= promotion.diploma_year %></td>
-        <td><%= link_to 'Show', promotion %></td>
-        <td><%= link_to 'Edit', edit_promotion_path(promotion) %></td>
-        <td><%= link_to 'Destroy', promotion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to promotion, promotion %></td>
+        <td><%= promotion.users.count %></td>
       </tr>
     <% end %>
   </tbody>
