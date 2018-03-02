@@ -1,15 +1,22 @@
 <% content_for :title, 'Utilisateurs' %>
-<div class="row users">
-  <% @users.each do |user| %>
-  <div class="col-md-2 user">
-    <%= link_to user do %>
-      <%= image_tag user.gravatar_url, class: 'img-circle img-responsive' %><br/>
-      <%= user %><br/>
-      <small><%= user.diploma_year %></small>
-      <% if can? :edit, user %>
-      	<p><%= link_to 'Edit', edit_user_path(user), class: 'btn btn-default btn-xs' %></p>
-      <% end %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Etudiant</th>
+      <th>Promotion</th>
+      <th>Projet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.includes(:promotion).each do |user| %>
+      <tr>
+        <td>
+          <%= link_to user, user %>
+          <%= link_to 'Edit', edit_user_path(user), class: 'btn btn-default btn-xs' if can? :edit, user %>
+        </td>
+        <td><%= link_to user.promotion, user.promotion %></td>
+        <td><%= link_to user.project, user.project %></td>
+      </tr>
     <% end %>
-  </div>
-  <% end %>
-</div>
+  </tbody>
+</table>
