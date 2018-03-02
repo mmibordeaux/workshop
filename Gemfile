@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-ruby '2.3.3'
+ruby '2.4.2'
 
-gem 'rails', '5.0.2'                                        # App                             https://github.com/rails/rails
-gem 'pg'                                                    # PostgreSQL database             https://bitbucket.org/ged/ruby-pg/src
-gem 'passenger'
+gem 'rails', '~> 5.1'                                       # App                             https://github.com/rails/rails
+gem 'pg', '0.21.0'                                          # PostgreSQL database             https://bitbucket.org/ged/ruby-pg/src
+gem 'puma'
 gem 'simple_form'                                           # Forms                           https://github.com/plataformatec/simple_form
 gem 'sass-rails'                                            # SASS                            https://github.com/rails/sass-rails
 gem 'bootstrap-sass'                                        # Bootstrap                       https://github.com/twbs/bootstrap-sass

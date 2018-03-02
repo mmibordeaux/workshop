@@ -20,6 +20,7 @@
 #  last_sign_in_ip        :inet
 #  admin                  :boolean          default(FALSE)
 #  diploma_year           :integer
+#  promotion_id           :integer
 #
 
 class User < ActiveRecord::Base
@@ -28,6 +29,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  belongs_to :promotion
   has_and_belongs_to_many :projects
   has_many :features, through: :project
 

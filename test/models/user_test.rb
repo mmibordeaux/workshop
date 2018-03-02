@@ -20,6 +20,7 @@
 #  last_sign_in_ip        :inet
 #  admin                  :boolean          default(FALSE)
 #  diploma_year           :integer
+#  promotion_id           :integer
 #
 
 require 'test_helper'

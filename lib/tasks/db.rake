@@ -10,8 +10,8 @@ namespace :db do
     Bundler.with_clean_env do
       sh "heroku pg:backups capture"
       sh "curl -o latest.dump `heroku pg:backups public-url`"
-      sh "rake db:drop"
-      sh "rake db:create"
+      sh "bundle exec rake db:drop"
+      sh "bundle exec rake db:create"
 
       begin
         sh "pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d #{configuration['database']} latest.dump"

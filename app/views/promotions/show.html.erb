@@ -1,0 +1,23 @@
+<% content_for :title, @promotion %>
+
+<%= link_to 'Edit', edit_promotion_path(@promotion), class: 'btn btn-default' if can? :edit, @promotion %>
+
+<p><%= @promotion.users.count %> étudiants</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Projets</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @promotion.users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.project %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

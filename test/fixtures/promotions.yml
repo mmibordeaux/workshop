@@ -1,0 +1,17 @@
+# == Schema Information
+#
+# Table name: promotions
+#
+#  id           :integer          not null, primary key
+#  diploma_year :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  diploma_year: MyString
+
+two:
+  diploma_year: MyString

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :promotions
   resources :workshops do 
     get :synthesis
   end
