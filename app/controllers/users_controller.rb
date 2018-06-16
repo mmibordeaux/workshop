@@ -35,7 +35,8 @@ class UsersController < ApplicationController
 
   def diploma
     @year = params[:year]
-    @users = User.where.not(admin: true).where(diploma_year: @year).order(:last_name, :first_name).all
+    @promotion = Promotion.where(diploma_year: @year).first
+    @users = @promotion.users.order(:last_name, :first_name)
     @workshops = Workshop.all.order(created_at: :desc)
   end
 
