@@ -1,7 +1,8 @@
 <%= link_to project do %>
   <article class="project thumbnail">
+    <span class="label label-default pull-right"><%= project.users.count %></span>
     <h1><%= project.name %></h1>
-    <p>(<%= link_to project.workshop, project.workshop unless project.workshop.nil? %>)</p>
+    <p class="small"><%= link_to project.workshop, project.workshop unless project.workshop.nil? %></p>
     <p><%= project.description %></p>
     <p><%= link_to project.url, project.url, target: :blank %></p>
   </article>

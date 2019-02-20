@@ -23,7 +23,7 @@ class Project < ActiveRecord::Base
   validates :name, presence: true
 
   def has_feature?(feature)
-  	features.include? feature
+    features.include? feature
   end
 
   def note
