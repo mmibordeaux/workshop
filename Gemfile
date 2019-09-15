@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.4.2'
+ruby '2.6.3'
 
-gem 'rails', '~> 5.1'                                       # App                             https://github.com/rails/rails
+gem 'rails', '~> 5'                                       # App                             https://github.com/rails/rails
 gem 'pg', '0.21.0'                                          # PostgreSQL database             https://bitbucket.org/ged/ruby-pg/src
 gem 'puma'
 gem 'simple_form'                                           # Forms                           https://github.com/plataformatec/simple_form
