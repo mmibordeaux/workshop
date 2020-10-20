@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.6.3'
+ruby '2.7.1'
 
 gem 'rails', '~> 5'                   # App                             https://github.com/rails/rails
 gem 'pg', '0.21.0'                    # PostgreSQL database             https://bitbucket.org/ged/ruby-pg/src
