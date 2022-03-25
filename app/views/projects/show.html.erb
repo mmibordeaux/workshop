@@ -1,23 +1,25 @@
 <% content_for :title, @project %>
 
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-4">
     <%= render 'project', project: @project %>
-    <%= link_to @project.github, @project.github, target: :blank %>
     <ul class="list-group">
       <% @project.users.each do |user| %>
         <li class="list-group-item">
           <%= link_to user do %>
             <%= image_tag user.gravatar_url(size: 25), class: 'img-circle' %>
             <%= user %>
+            <span class="small text-muted">
+              <%= user.promotion %>
+            </span>
           <% end %>
         </li>
       <% end %>
     </ul>
-    <%= link_to 'Edit', edit_project_path(@project) if can? :edit, @project %>
-    <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, @project %>
+    <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-sm btn-primary' if can? :edit, @project %>
+    <%= link_to 'Destroy', @project, method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure?' } if can? :destroy, @project %>
   </div>
-  <div class="col-md-9">
+  <div class="col-md-8">
     <%= render partial:'fields/list', locals: { fields: @fields, project: @project } %>
   </div>
 </div>

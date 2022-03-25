@@ -4,6 +4,15 @@
     <h1><%= project.name %></h1>
     <p class="small"><%= link_to project.workshop, project.workshop unless project.workshop.nil? %></p>
     <p><%= project.description %></p>
-    <p><%= link_to project.url, project.url, target: :blank %></p>
+    <p>
+      <%= link_to 'Site',
+                  project.url,
+                  target: :blank,
+                  class: 'btn btn-sm btn-primary' if project.url %>
+      <%= link_to 'Github',
+                  project.github,
+                  target: :blank,
+                  class: 'btn btn-sm btn-primary' if project.github %>
+    </p>
   </article>
 <% end %>
