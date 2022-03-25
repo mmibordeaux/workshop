@@ -8,11 +8,11 @@
       <%= link_to 'Site',
                   project.url,
                   target: :blank,
-                  class: 'btn btn-sm btn-primary' if project.url %>
+                  class: 'btn btn-sm btn-primary' unless project.url.blank? %>
       <%= link_to 'Github',
                   project.github,
                   target: :blank,
-                  class: 'btn btn-sm btn-primary' if project.github %>
+                  class: 'btn btn-sm btn-primary' unless project.github.blank? %>
     </p>
   </article>
 <% end %>
