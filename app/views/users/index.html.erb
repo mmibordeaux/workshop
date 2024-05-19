@@ -3,6 +3,7 @@
   <thead>
     <tr>
       <th>Etudiant</th>
+      <th>Mail</th>
       <th>Promotion</th>
       <th>Projet</th>
     </tr>
@@ -14,8 +15,9 @@
           <%= link_to user, user %>
           <%= link_to 'Edit', edit_user_path(user), class: 'btn btn-default btn-xs' if can? :edit, user %>
         </td>
+        <td><%= user.email %></td>
         <td><%= link_to user.promotion, user.promotion %></td>
-        <td><%= link_to user.project, user.project %></td>
+        <td><%= link_to user.project, user.project if user.project %></td>
       </tr>
     <% end %>
   </tbody>
